@@ -3,6 +3,7 @@
 
 #include <stdlib.h>
 #include <stdio.h>
+#include <cstdlib>
 
 void print_school(void);
 
