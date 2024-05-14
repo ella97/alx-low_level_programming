@@ -2,50 +2,38 @@
 #include <math.h>
 
 /**
- * is_prime - Check if a number is prime
- * @n: The number to check
- * Return: 1 if prime, 0 otherwise
+ * main - finds and prints the largest prime factor of the number 612852475143
+ * followed by a new line
+ * Return: Always 0 (Success)
  */
-int is_prime(long n)
-{
-    long i;
-
-    if (n <= 1)
-        return 0;
-
-    for (i = 2; i <= sqrt(n); i++)
-    {
-        if (n % i == 0)
-            return 0;
-    }
-
-    return 1;
-}
-
-/**
- * largest_prime_factor - Find the largest prime factor of a number
- * @n: The number to find the largest prime factor for
- * Return: The largest prime factor
- */
-long largest_prime_factor(long n)
-{
-    long i;
-
-    for (i = 2; i <= n; i++)
-    {
-        if (n % i == 0 && is_prime(i))
-            n /= i;
-    }
-
-    return i - 1;
-}
-
 int main(void)
 {
-    long number = 612852475143;
-    long largest_factor = largest_prime_factor(number);
+	long int n;
+	long int max;
+	long int i;
 
-    printf("%ld\n", largest_factor);
+	n = 612852475143;
+	max = -1;
 
-    return 0;
+	while (n % 2 == 0)
+	{
+		max = 2;
+		n /= 2;
+	}
+
+	for (i = 3; i <= sqrt(n); i = i + 2)
+	{
+		while (n % i == 0)
+		{
+			max = i;
+			n = n / i;
+		}
+	}
+
+	if (n > 2)
+		max = n;
+
+	printf("%ld\n", max);
+
+	return (0);
 }
