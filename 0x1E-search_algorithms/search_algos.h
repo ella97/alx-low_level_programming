@@ -28,7 +28,7 @@ typedef struct listint_s
  * @next: Pointer to the next node
  * @exp: Pointer to the next node in the exp lane
  *
- * Description: singly linked list node structure 
+ * Description: singly linked list node structure
  */
 typedef struct skiplist_s
 {
