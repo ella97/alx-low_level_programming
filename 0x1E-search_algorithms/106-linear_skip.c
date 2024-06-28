@@ -16,15 +16,14 @@ skiplist_t *linear_skip(skiplist_t *list, int value)
 
 	go = list;
 
-	do
-	{
+	do {
 		list = go;
-		go = go->exp;
+		go = go->express;
 		printf("Value checked at index ");
 		printf("[%d] = [%d]\n", (int)go->index, go->n);
-	} while (go->exp && go->n < value);
+	} while (go->express && go->n < value);
 
-	if (go->exp == NULL)
+	if (go->express == NULL)
 	{
 		list = go;
 		while (go->next)
